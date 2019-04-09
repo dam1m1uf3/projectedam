@@ -40,10 +40,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Configuracion configuracio = new Configuracion();
+
+        if (!configuracio.getWantMusic()){
+            mediaPlayer.stop();
+        }
+
         mediaPlayer= MediaPlayer.create(MainActivity.this, R.raw.dylan);
 
         chronometer = findViewById(R.id.simpleChronometer);
-        startChronometer(findViewById(R.id.simpleChronometer));
+        startChronometer(findViewById(R.id.simpleChronometer), configuracio);
 
         final TextView contador = findViewById(R.id.Contador);
 
@@ -169,8 +175,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /* Mètodes cronòmetre */
-    public void startChronometer(View v){
-        if(!running){
+    public void startChronometer(View v, Configuracion configuracio){
+        if(!running && configuracio.getWantTime()){
+            chronometer.setVisibility(View.VISIBLE);
             chronometer.start();
             running=true;
         }
