@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView contador = findViewById(R.id.Contador);
 
+        if (configuracio.getWantMoves()){
+            contador.setVisibility(View.VISIBLE);
+        }
+
         /* Screen size */
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);

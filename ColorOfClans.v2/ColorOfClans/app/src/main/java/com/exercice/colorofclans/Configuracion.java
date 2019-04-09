@@ -10,8 +10,8 @@ public class Configuracion {
     public Configuracion() {
         wantMusic = true;
         changeColorActivated = false;
-        wantTime = false;
-        wantMoves = true;
+        wantTime = true;
+        wantMoves = false;
     }
 
     public boolean getWantMusic(){
