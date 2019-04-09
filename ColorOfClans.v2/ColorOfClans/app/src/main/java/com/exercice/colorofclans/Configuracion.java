@@ -6,12 +6,14 @@ public class Configuracion {
     private boolean changeColorActivated;
     private boolean wantTime;
     private boolean wantMoves;
+    private int numCells;
 
     public Configuracion() {
         wantMusic = true;
         changeColorActivated = false;
         wantTime = true;
-        wantMoves = false;
+        wantMoves = true;
+        numCells = 4;
     }
 
     public boolean getWantMusic(){
@@ -26,6 +28,9 @@ public class Configuracion {
     public boolean getWantMoves(){
         return wantMoves;
     }
+    public int getNumCells(){
+        return numCells;
+    }
     public void setWantMusic(boolean wantMusic){
         this.wantMusic = wantMusic;
     }
@@ -37,5 +42,8 @@ public class Configuracion {
     }
     public void setWantMoves(boolean wantMoves){
         this.wantMoves = wantMoves;
+    }
+    public void setNumCells(int numCells){
+        this.numCells = numCells;
     }
 }

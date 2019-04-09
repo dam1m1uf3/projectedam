@@ -1,5 +1,6 @@
 package com.exercice.colorofclans;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -15,10 +16,12 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
+    Configuracion configuracio = new Configuracion();
+
     //TODO Position and size relatives
     final int POSITION_BOARD_X = 0;
     final int POSITION_BOARD_Y = 200;
-    final int NUM_CELLS = 10;
+    final int NUM_CELLS = configuracio.getNumCells();
     final int CELL_SEPARATION = 2;
 
     final int NUM_BTN = 6;
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Configuracion configuracio = new Configuracion();
+        count = 0;
 
         if (!configuracio.getWantMusic()){
             mediaPlayer.stop();
@@ -174,6 +177,9 @@ public class MainActivity extends AppCompatActivity {
         board.checkAdjacentColor(0,0);
         if(board.gameIsFinished()){
             stopChronometer(findViewById(R.id.simpleChronometer));
+            Intent intent = new Intent(this, Menu.class);
+            startActivity(intent);
+            finish();
         }
         Game.updateMovements(contador);
     }
