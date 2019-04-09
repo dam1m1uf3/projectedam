@@ -17,7 +17,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="41dp"
         android:textSize="20sp" />
-    
+
     <Button
         android:id="@+id/btnColor1"
         android:layout_width="60dp"
@@ -27,8 +27,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="80dp"
-        android:background="@color/colorRed" />
+        android:layout_marginBottom="80dp" />
 
     <Button
         android:id="@+id/btnColor2"
@@ -39,8 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="75dp"
         android:layout_marginLeft="75dp"
-        android:layout_marginBottom="80dp"
-        android:background="@color/colorBlue" />
+        android:layout_marginBottom="80dp" />
 
     <Button
         android:id="@+id/btnColor3"
@@ -51,8 +49,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="142dp"
         android:layout_marginLeft="142dp"
-        android:layout_marginBottom="80dp"
-        android:background="@color/colorGreen" />
+        android:layout_marginBottom="80dp" />
 
     <Button
         android:id="@+id/btnColor4"
@@ -63,8 +60,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="208dp"
         android:layout_marginLeft="208dp"
-        android:layout_marginBottom="80dp"
-        android:background="@color/colorYellow" />
+        android:layout_marginBottom="80dp" />
 
     <Button
         android:id="@+id/btnColor5"
@@ -75,8 +71,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="275dp"
         android:layout_marginLeft="275dp"
-        android:layout_marginBottom="80dp"
-        android:background="@color/colorPink" />
+        android:layout_marginBottom="80dp" />
 
     <Button
         android:id="@+id/btnColor6"
@@ -87,8 +82,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="343dp"
         android:layout_marginLeft="343dp"
-        android:layout_marginBottom="80dp"
-        android:background="@color/colorPurple" />
+        android:layout_marginBottom="80dp" />
 
     <TextView
         android:id="@+id/Contador"
