@@ -11,9 +11,9 @@ public class Configuracion {
     public Configuracion() {
         wantMusic = true;
         changeColorActivated = false;
-        wantTime = true;
+        wantTime = false;
         wantMoves = true;
-        numCells = 4;
+        numCells = 15;
     }
 
     public boolean getWantMusic(){
