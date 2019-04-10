@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
-
+/** Esta guay que puguis pujar coses al github **/
 public class MainActivity extends AppCompatActivity {
 
     Configuracion configuracio = new Configuracion();
