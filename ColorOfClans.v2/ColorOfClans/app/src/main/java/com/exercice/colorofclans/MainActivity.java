@@ -19,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
     Configuracion configuracio = new Configuracion();
 
-    Configuracion configuracio = new Configuracion();
-
     //TODO Position and size relatives
     final int POSITION_BOARD_X = 0;
     final int POSITION_BOARD_Y = 200;
