@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             mediaPlayer.stop();
         }
 
-        mediaPlayer= MediaPlayer.create(MainActivity.this, R.raw.dylan);
+        mediaPlayer= MediaPlayer.create(MainActivity.this, R.raw.insert_coin);
 
         /* Start Chronometer */
         chronometer = findViewById(R.id.simpleChronometer);
