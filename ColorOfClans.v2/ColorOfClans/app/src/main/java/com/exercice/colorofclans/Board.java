@@ -21,9 +21,16 @@ public class Board {
     private String[] colors;
 
     /**
-     * Constructor
-     * Initializes board and a matrix of Squares
+     * Initializes the matrix of Square
      *
+     * @param position_board_x relative position in x for the phone
+     * @param position_board_y relative position in y for the phone
+     * @param num_cells number of squares in one side of the board
+     * @param cell_separation separation between squares
+     * @param margin_board_right_left margin left
+     * @param winWidth width of the window of the phone
+     * @param layout
+     * @param cont
      */
     Board(int position_board_x, int position_board_y, int num_cells, int cell_separation , int margin_board_right_left, int winWidth, String[] colors, RelativeLayout layout, Context cont){
         this.myBoard = new Square[num_cells][num_cells];
@@ -54,6 +61,11 @@ public class Board {
         this.putColor();
     }
 
+    /**
+     * putColor
+     * It puts a random color on every Square of the Board, and a different one
+     * of the first Square
+     */
     public void putColor (){
         for (int i = 0; i < this.board_size; i++){
             for(int j = 0; j < this.board_size; j++){
@@ -71,8 +83,9 @@ public class Board {
 
 
     /**
+     * get a random color
      *
-     * @return
+     * @return the color choosen
      */
     public String getColorByRandom (){
 
@@ -105,7 +118,12 @@ public class Board {
         }
     }
 
-    public void colorChange(String color) throws IOException{
+    /**
+     * Changes the color of the obtained squares to the selected color
+     *
+     * @param color The selected color
+     */
+    public void colorChange(String color){
 
         for (int i = 0; i < this.board_size; i++){
             for(int j = 0; j < this.board_size; j++){
@@ -117,6 +135,9 @@ public class Board {
         }
     }
 
+    /**
+     * Reestart the attribute reestartIsChecked for the recursive method.
+     */
     public void reestartIsChecked(){
         for (int i = 0; i < board_size; i++){
             for(int j = 0; j < board_size; j++){
@@ -127,6 +148,13 @@ public class Board {
     }
 
 
+    /**
+     * Recursive method, it sets to true the isGet value if the adjacent color is the same than the
+     * color selected by the player.
+     *
+     * @param x coordinate in x of the Square in the matrix
+     * @param y coordinate in y of the Square in the matrix
+     */
     public void checkAdjacentColor(int x, int y){
         myBoard[x][y].setIsChecked(true);
         myBoard[x][y].setIsGet(true);
@@ -169,7 +197,4 @@ public class Board {
         }
         return true;
     }
-
-    //------------------------------------------------------------------------------------------------------------------
-
 }
