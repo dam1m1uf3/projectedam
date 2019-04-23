@@ -6,8 +6,61 @@
     android:id="@+id/menuImage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fons"
+    android:background="@drawable/fons_2"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Menu">
+
+    <ImageView
+        android:id="@+id/startButton"
+        android:layout_width="251dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="561dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginBottom="122dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/todo"
+        android:visibility="visible"
+        app:srcCompat="@drawable/start_button" />
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="648dp"
+        android:layout_marginEnd="291dp"
+        android:layout_marginRight="291dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/settings_button" />
+
+    <Button
+        android:id="@+id/helpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="257dp"
+        android:layout_marginLeft="257dp"
+        android:layout_marginTop="644dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
+        android:layout_marginBottom="39dp"
+        android:background="@drawable/help_button" />
 
 </RelativeLayout>

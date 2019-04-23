@@ -1,5 +1,6 @@
 package com.exercice.colorofclans;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -13,13 +14,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
-
+/** Esta guay que puguis pujar coses al github **/
 public class MainActivity extends AppCompatActivity {
+
+    Configuracion configuracio = new Configuracion();
+
+    Configuracion configuracio = new Configuracion();
 
     //TODO Position and size relatives
     final int POSITION_BOARD_X = 0;
     final int POSITION_BOARD_Y = 200;
-    final int NUM_CELLS = 10;
+    final int NUM_CELLS = configuracio.getNumCells();
     final int CELL_SEPARATION = 2;
 
     final int NUM_BTN = 6;
@@ -44,16 +49,26 @@ public class MainActivity extends AppCompatActivity {
         /* Get Colors*/
         final String[] colors = {"#00ABA9","#FA6800","#0050EF","#F472D0","#A4C400","#AA00FF"};
 
+        count = 0;
+
+        if (!configuracio.getWantMusic()){
+            mediaPlayer.stop();
+        }
+
         mediaPlayer= MediaPlayer.create(MainActivity.this, R.raw.dylan);
 
         /* Start Chronometer */
         chronometer = findViewById(R.id.simpleChronometer);
-        startChronometer(findViewById(R.id.simpleChronometer));
+        startChronometer(findViewById(R.id.simpleChronometer), configuracio);
 
         /* Start Contador*/
         final TextView contador = findViewById(R.id.Contador);
         count = 0;
         contador.setText("0/30");
+
+        if (configuracio.getWantMoves()){
+            contador.setVisibility(View.VISIBLE);
+        }
 
         /* Screen size */
         DisplayMetrics metrics = new DisplayMetrics();
@@ -179,13 +194,17 @@ public class MainActivity extends AppCompatActivity {
         board.checkAdjacentColor(0,0);
         if(board.gameIsFinished()){
             stopChronometer(findViewById(R.id.simpleChronometer));
+            Intent intent = new Intent(this, Menu.class);
+            startActivity(intent);
+            finish();
         }
         Game.updateMovements(contador);
     }
 
     /* Mètodes cronòmetre */
-    public void startChronometer(View v){
-        if(!running){
+    public void startChronometer(View v, Configuracion configuracio){
+        if(!running && configuracio.getWantTime()){
+            chronometer.setVisibility(View.VISIBLE);
             chronometer.start();
             running=true;
         }
