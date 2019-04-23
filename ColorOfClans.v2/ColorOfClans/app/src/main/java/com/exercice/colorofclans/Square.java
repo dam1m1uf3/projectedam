@@ -9,8 +9,14 @@ public class Square extends View {
    private String color;
    private boolean isGet;
    private boolean isChecked;
-   
 
+    /**
+     * Constructor of the Square
+     *
+     * @param color The color of the Square
+     * @param squareSize The size of the Square
+     * @param cont
+     */
    Square (String color, int squareSize, Context cont){
        super(cont);
        this.setBackgroundColor(Color.parseColor(color));
@@ -24,14 +30,14 @@ public class Square extends View {
        this.color = color;
    }
    
-   public String getColor(){
-       return this.color;
-   }
+
    
    /**
-    * 
+    * Getters and setters of the attributes
     * @param bool 
     */
+   public String getColor(){ return this.color; }
+
    public void setIsGet(boolean bool){
        isGet = bool;
    }
