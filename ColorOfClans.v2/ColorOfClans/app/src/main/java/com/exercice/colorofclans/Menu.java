@@ -26,6 +26,12 @@ public class Menu extends AppCompatActivity {
 
         Button config = (Button)findViewById(R.id.settingsButton);
         config.setBackgroundResource(R.drawable.settings_pressed);
+        config.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openConfigActivity();
+            }
+        });
 
         Button help = (Button)findViewById(R.id.helpButton);
         help.setBackgroundResource(R.drawable.botones_press);
@@ -60,5 +66,8 @@ public class Menu extends AppCompatActivity {
         Intent mainIntent = new Intent(this, MainActivity.class);
         startActivity(mainIntent);
         finish();
+    }
+    public void openConfigActivity(){
+
     }
 }
