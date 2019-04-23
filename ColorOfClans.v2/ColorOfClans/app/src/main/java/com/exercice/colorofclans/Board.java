@@ -18,6 +18,7 @@ public class Board {
     private int positionX;
     private int positionY;
     private int margin_border_RL;
+    private String[] colors;
 
     /**
      * Initializes the matrix of Square
@@ -31,13 +32,14 @@ public class Board {
      * @param layout
      * @param cont
      */
-    Board(int position_board_x, int position_board_y, int num_cells, int cell_separation , int margin_board_right_left, int winWidth, RelativeLayout layout, Context cont){
+    Board(int position_board_x, int position_board_y, int num_cells, int cell_separation , int margin_board_right_left, int winWidth, String[] colors, RelativeLayout layout, Context cont){
         this.myBoard = new Square[num_cells][num_cells];
         this.stillPlaying = true;
         this.board_size = num_cells;
         this.positionX = position_board_x;
         this.positionY = position_board_y;
         this.margin_border_RL = margin_board_right_left;
+        this.colors = colors;
 
         int squareSize = (winWidth-margin_border_RL*2 - ((num_cells-1)*cell_separation))/num_cells;
 
@@ -92,27 +94,27 @@ public class Board {
 
         if (n == 0){
             //blue
-            return "#0000FF";
+            return this.colors[0];
         }
         else if (n == 1){
             //red
-            return "#FF0000";
+            return this.colors[1];
         }
         else if (n == 2){
             //green
-            return "#00FF00";
+            return this.colors[2];
         }
         else if (n == 3){
             //yellow
-            return "#FFFF00";
+            return this.colors[3];
         }
         else if (n == 4){
             //pink
-            return "#FF00FF";
+            return this.colors[4];
         }
         else{
             //indigo
-            return "#4B0082";
+            return this.colors[5];
         }
     }
 
