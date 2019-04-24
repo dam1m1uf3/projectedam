@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 
 public class Menu extends AppCompatActivity {
 
+    public Configuracion configuracio;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,8 @@ public class Menu extends AppCompatActivity {
                 openMainActivity();
             }
         });
+
+        configuracio = new Configuracion();
 
         ImageButton config = (ImageButton)findViewById(R.id.settingsButton);
         config.setBackgroundResource(R.drawable.settings_pressed);

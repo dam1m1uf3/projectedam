@@ -17,7 +17,7 @@ import java.io.IOException;
 /** Esta guay que puguis pujar coses al github **/
 public class MainActivity extends AppCompatActivity {
 
-    Configuracion configuracio = new Configuracion();
+    public Configuracion configuracio = new Configuracion();
 
     //TODO Position and size relatives
     final int POSITION_BOARD_X = 0;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     final int MARGIN_BOARD_RIGHT_LEFT = 10;
     final int MARGIN_BOARD_BOTTOM = 10;
+    final String[] COLORS = new String[6];
 
     MediaPlayer mediaPlayer;
 
@@ -45,7 +46,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         /* Get Colors*/
-        final String[] colors = {"#00ABA9","#FA6800","#0050EF","#F472D0","#A4C400","#AA00FF"};
+        if(configuracio.getchangeColorActivated() == true){
+            COLORS[0] = "#FF0013";
+            COLORS[1] = "#F5F857";
+            COLORS[2] = "#1E7BEC";
+            COLORS[3] = "#EB005B";
+            COLORS[4] = "#8E8B8C";
+            COLORS[5] = "#FFFCEA";
+        }else{
+            COLORS[0] = "#00ABA9";
+            COLORS[1] = "#FA6800";
+            COLORS[2] = "#0050EF";
+            COLORS[3] = "#F472D0";
+            COLORS[4] = "#A4C400";
+            COLORS[5] = "#AA00FF";
+        }
 
         count = 0;
 
@@ -76,13 +91,13 @@ public class MainActivity extends AppCompatActivity {
 
         /* Start create Board of game */
         final RelativeLayout rl = findViewById(R.id.MainLayout);
-        final Board board = new Board(POSITION_BOARD_X, POSITION_BOARD_Y, NUM_CELLS, CELL_SEPARATION, MARGIN_BOARD_RIGHT_LEFT, winWidth, colors, rl, getApplicationContext());
+        final Board board = new Board(POSITION_BOARD_X, POSITION_BOARD_Y, NUM_CELLS, CELL_SEPARATION, MARGIN_BOARD_RIGHT_LEFT, winWidth, COLORS, rl, getApplicationContext());
 
         /* BUTTONS */
         int btnSize = (winWidth-MARGIN_BOARD_RIGHT_LEFT*2- ((NUM_BTN-1)*BTN_SEPARATION))/NUM_BTN;
 
         final Button btncolor1 = findViewById(R.id.btnColor1);
-        btncolor1.setBackgroundColor(Color.parseColor(colors[0]));
+        btncolor1.setBackgroundColor(Color.parseColor(COLORS[0]));
         RelativeLayout.LayoutParams btn1params = new RelativeLayout.LayoutParams(btnSize, btnSize);
         btn1params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btn1params.setMargins(MARGIN_BOARD_RIGHT_LEFT,0,0,MARGIN_BOARD_BOTTOM);
@@ -91,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 try {
-                    funcButton(colors[0], board, contador);
+                    funcButton(COLORS[0], board, contador);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -99,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final Button btncolor2 = findViewById(R.id.btnColor2);
-        btncolor2.setBackgroundColor(Color.parseColor(colors[1]));
+        btncolor2.setBackgroundColor(Color.parseColor(COLORS[1]));
         RelativeLayout.LayoutParams btn2params = new RelativeLayout.LayoutParams(btnSize, btnSize);
         btn2params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btn2params.setMargins(btn1params.leftMargin+btnSize+BTN_SEPARATION,0,0,MARGIN_BOARD_BOTTOM);
@@ -108,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 try {
-                    funcButton(colors[1], board, contador);
+                    funcButton(COLORS[1], board, contador);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -116,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final Button btncolor3 = findViewById(R.id.btnColor3);
-        btncolor3.setBackgroundColor(Color.parseColor(colors[2]));
+        btncolor3.setBackgroundColor(Color.parseColor(COLORS[2]));
         RelativeLayout.LayoutParams btn3params = new RelativeLayout.LayoutParams(btnSize,btnSize);
         btn3params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btn3params.setMargins(btn2params.leftMargin+btnSize+BTN_SEPARATION,0,0,MARGIN_BOARD_BOTTOM);
@@ -125,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 try {
-                    funcButton(colors[2], board, contador);
+                    funcButton(COLORS[2], board, contador);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -133,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final Button btncolor4 = findViewById(R.id.btnColor4);
-        btncolor4.setBackgroundColor(Color.parseColor(colors[3]));
+        btncolor4.setBackgroundColor(Color.parseColor(COLORS[3]));
         RelativeLayout.LayoutParams btn4params = new RelativeLayout.LayoutParams(btnSize,btnSize);
         btn4params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btn4params.setMargins(btn3params.leftMargin+btnSize+BTN_SEPARATION,0,0,MARGIN_BOARD_BOTTOM);
@@ -142,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 try {
-                    funcButton(colors[3], board, contador);
+                    funcButton(COLORS[3], board, contador);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -150,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final Button btncolor5 = findViewById(R.id.btnColor5);
-        btncolor5.setBackgroundColor(Color.parseColor(colors[4]));
+        btncolor5.setBackgroundColor(Color.parseColor(COLORS[4]));
         RelativeLayout.LayoutParams btn5params = new RelativeLayout.LayoutParams(btnSize,btnSize);
         btn5params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btn5params.setMargins(btn4params.leftMargin+btnSize+BTN_SEPARATION,0,0,MARGIN_BOARD_BOTTOM);
@@ -159,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 try {
-                    funcButton(colors[4], board, contador);
+                    funcButton(COLORS[4], board, contador);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -167,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final Button btncolor6 = findViewById(R.id.btnColor6);
-        btncolor6.setBackgroundColor(Color.parseColor(colors[5]));
+        btncolor6.setBackgroundColor(Color.parseColor(COLORS[5]));
         RelativeLayout.LayoutParams btn6params = new RelativeLayout.LayoutParams(btnSize,btnSize);
         btn6params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btn6params.setMargins(btn5params.leftMargin+btnSize+BTN_SEPARATION,0,0,MARGIN_BOARD_BOTTOM);
@@ -176,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 try {
-                    funcButton(colors[5], board, contador);
+                    funcButton(COLORS[5], board, contador);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
