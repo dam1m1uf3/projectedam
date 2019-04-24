@@ -13,7 +13,7 @@ public class Configuracion {
         changeColorActivated = false;
         wantTime = false;
         wantMoves = true;
-        numCells = 20;
+        numCells = 10;
     }
 
     public boolean getWantMusic(){
