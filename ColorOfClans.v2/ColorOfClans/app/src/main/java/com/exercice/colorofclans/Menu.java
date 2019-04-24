@@ -6,6 +6,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -24,7 +25,7 @@ public class Menu extends AppCompatActivity {
             }
         });
 
-        Button config = (Button)findViewById(R.id.settingsButton);
+        ImageButton config = (ImageButton)findViewById(R.id.settingsButton);
         config.setBackgroundResource(R.drawable.settings_pressed);
         config.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +34,7 @@ public class Menu extends AppCompatActivity {
             }
         });
 
-        Button help = (Button)findViewById(R.id.helpButton);
+        ImageButton help = (ImageButton)findViewById(R.id.helpButton);
         help.setBackgroundResource(R.drawable.botones_press);
 
         final ImageView start = (ImageView)findViewById(R.id.startButton);
@@ -68,6 +69,7 @@ public class Menu extends AppCompatActivity {
         finish();
     }
     public void openConfigActivity(){
-
+        Intent configActivity = new Intent(this, configActvity.class);
+        startActivity(configActivity);
     }
 }
