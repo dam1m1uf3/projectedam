@@ -1,6 +1,7 @@
 package com.exercice.colorofclans;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu2);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         RelativeLayout background = findViewById(R.id.menuImage);
         background.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,12 @@ public class Menu extends AppCompatActivity {
 
         ImageButton help = (ImageButton)findViewById(R.id.helpButton);
         help.setBackgroundResource(R.drawable.botones_press);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCredits();
+            }
+        });
 
         final ImageView start = (ImageView)findViewById(R.id.startButton);
 
@@ -76,4 +83,10 @@ public class Menu extends AppCompatActivity {
         Intent configActivity = new Intent(this, configActvity.class);
         startActivity(configActivity);
     }
+    public void openCredits(){
+        Intent creditActivity = new Intent(this, creditsActivity.class);
+        startActivity(creditActivity);
+        finish();
+    }
+
 }
