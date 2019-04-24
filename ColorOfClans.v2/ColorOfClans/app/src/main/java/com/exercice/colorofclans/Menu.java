@@ -36,6 +36,12 @@ public class Menu extends AppCompatActivity {
 
         ImageButton help = (ImageButton)findViewById(R.id.helpButton);
         help.setBackgroundResource(R.drawable.botones_press);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCredits();
+            }
+        });
 
         final ImageView start = (ImageView)findViewById(R.id.startButton);
 
@@ -72,4 +78,10 @@ public class Menu extends AppCompatActivity {
         Intent configActivity = new Intent(this, configActvity.class);
         startActivity(configActivity);
     }
+    public void openCredits(){
+        Intent creditActivity = new Intent(this, creditsActivity.class);
+        startActivity(creditActivity);
+        finish();
+    }
+
 }
