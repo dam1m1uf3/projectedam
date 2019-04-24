@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/creditBack"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".creditsActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="111dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorCreditos">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="316dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="47dp"
+                android:layout_marginRight="47dp"
+                android:layout_marginBottom="24dp"
+                android:text="Project created by DAM1"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@+id/diseñadores"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Diseñadores"
+                android:layout_width="297dp"
+                android:layout_height="728dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="74dp"
+                android:layout_marginRight="74dp"
+                android:text="Designers: \n\n\tGastón Rossi - Jefe\n\tSebastían Fornelli\n\tGeorge Peña\n\tDamián Molina\n\tIsha Noor\n\tPilar Gonzales\n\tCatriel Molina\n\tSergi Poza\n\tChristian Villegas\n\tAisha Abbas"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diseñadores"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/diseñadores"
+                android:layout_width="274dp"
+                android:layout_height="526dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="4dp"
+                android:text="Desarrollators: \n\n\tIsvy Kelison - Jefe\n\tMiguel Pan\n\tJorge Fiorilo\n\tAndrey Melnikov\n\tCayetano Yeste\n\tIsmael Romero\n\tAlejandro Quiroga\n\tAndres Lopez"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@+id/Diseñadores"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/btnReturn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorCreditos"
+                android:text="Back"
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="1112dp" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
