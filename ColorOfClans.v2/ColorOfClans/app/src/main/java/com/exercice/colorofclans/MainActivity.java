@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     //TODO Position and size relatives
     final int POSITION_BOARD_X = 0;
-    final int POSITION_BOARD_Y = 200;
+    final int POSITION_BOARD_Y = 250;
     final int NUM_CELLS = configuracio.getNumCells();
     final int CELL_SEPARATION = 2;
 
